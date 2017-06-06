@@ -93,6 +93,9 @@ countly update sdk-web
 #compile scripts for production
 cd $DIR && grunt dist-all
 
+echo "Killing mongod background process..."
+killall mongod
+
 #finally start countly api and dashboard
 if [ "$INSIDE_DOCKER" != "1" ]
 then
